@@ -21,4 +21,8 @@ We also need a way of holding all of this data and information in an organised m
 
 **Neo4j**
 
-[Neo4j](https://neo4j.com) is a graph database management system developed by Neo Technology. It is one of the most popular graph database management systems used today and is used by companys including Cisco, Walmart, eBay, HP, LinkedIn and many more. Walmart uses Neo4j to optimise customer expierence with real time recomendations and eBay uses it for eCommerce Delivery Service Routing. 
+[Neo4j](https://neo4j.com) is a graph database management system developed by Neo Technology written in java. It is one of the most popular graph database management systems used today and is used by companys including Cisco, Walmart, eBay, HP, LinkedIn and many more. Walmart uses Neo4j to optimise customer expierence with real time recomendations and eBay uses it for eCommerce Delivery Service Routing. 
+
+Each node and edge can hold multiple attributes and can be labled to narrow down searchs for a faster system. Neo4j uses the [Cypher Query Language](https://en.wikipedia.org/wiki/Cypher_Query_Language) to search through the database and carry out querys. The simple but powerful language can search through the largest and most complicated databases when the right querys are used using MATCH and WHERE clauses similar to SQL.
+
+Neo4j has a very well layed out interface once installed and displays graph databases with the nodes represented by coloured cirlces and the relationships or edges can be labled for easy an easy to follow connection between the nodes. The database can be very well layed out if designed properly and the built it command line for cypher querys works very well. When the right querys are used, only the relevent information is displayed very quickly. The nodes can also be dragged around to suit your preference. 
