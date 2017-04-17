@@ -46,6 +46,8 @@ There was around 150 of these
 
 I used **room1** in order to add all the rooms in one query, theres no significance to the name.
 
+For the propuses of this prototype database I'm onlt going to use the Third Year Software Development Course timetable just to show the functionability.
+
 I then went on to add some lecturers, modules and the course to the database.
 >CREATE (n:Person { name: 'Ian McLoughlin', title: 'Lecturer' })
 
@@ -53,4 +55,9 @@ I then went on to add some lecturers, modules and the course to the database.
 
 >CREATE (n:Course { name: 'BSc in Computing in Software Development Year 3'})
 
+I then started to link up as many nodes as I could to start to build the timetabling system. I started with the lecturers and what they tought to get started.
+
+>MATCH (a:Module),(b:Person)
+WHERE a.name = 'Graph Theory' AND b.name = 'Ian McLoughlin'
+CREATE (a)-[r:TAUGHT_BY]->(b)
 
