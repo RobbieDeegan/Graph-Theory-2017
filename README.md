@@ -1,4 +1,4 @@
-# Graph Theory 2017 - Desgin Document for my prototype Timetabling System
+# Graph Theory 2017 - Timetabling System
 ### Robert Deegan - G00320583
 ### Project Specification
 >You are required to design and prototype a Neo4j database for use in a timetabling system for a third level institute like GMIT. The database should store information about student groups, classrooms, lecturers, and work hours – just like the currently used timetabling system at GMIT.
@@ -26,3 +26,10 @@ We also need a way of holding all of this data and information in an organised m
 Each node and edge can hold multiple attributes and can be labled to narrow down searchs for a faster system. Neo4j uses the [Cypher Query Language](https://en.wikipedia.org/wiki/Cypher_Query_Language) to search through the database and carry out querys. The simple but powerful language can search through the largest and most complicated databases when the right querys are used using MATCH and WHERE clauses similar to SQL.
 
 Neo4j has a very well layed out interface once installed and displays graph databases with the nodes represented by coloured cirlces and the relationships or edges can be labled for easy an easy to follow connection between the nodes. The database can be very well layed out if designed properly and the built it command line for cypher querys works very well. When the right querys are used, only the relevent information is displayed very quickly. The nodes can also be dragged around to suit your preference. 
+
+
+**My Approach to the problem**
+
+It took me a good while to come up with an approach to this problem. Mostly because I had to find something that was on par if not better than the current system implemented in the college. My first couple of drafts where not overly succesful as they where too complex and confusing even for myself and at the time I didn't understand 100% what was required but the these drafts eventually sent me down this path.
+
+One night I decided to appraoch the problem in the order of the importance (in my opinion) of the variables involved in running a lecture. I felt that I the root node or one of the higher level nodes could not be satified, that the whole tree could not work. I decided to start with the room at the root node and work down from there. I felt at the time that the room was the most important as without it there would be no lecture. Moving down from there I would add relationships from the room to the times that lectures run at from 9am - 6pm. From there a lecturer, group and module can be added to those times.
