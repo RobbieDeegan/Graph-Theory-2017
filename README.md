@@ -32,4 +32,16 @@ Neo4j has a very well layed out interface once installed and displays graph data
 
 It took me a good while to come up with an approach to this problem. Mostly because I had to find something that was on par if not better than the current system implemented in the college. My first couple of drafts where not overly succesful as they where too complex and confusing even for myself and at the time I didn't understand 100% what was required but the these drafts eventually sent me down this path.
 
-One night I decided to appraoch the problem in the order of the importance (in my opinion) of the variables involved in running a lecture. I felt that I the root node or one of the higher level nodes could not be satisfied, that the whole tree could not work. I decided to start with the room at the root node and work down from there. I felt at the time that the room was the most important as without it there would be no lecture. Moving down from there I would add relationships from the room to the times that lectures run at from 9am - 6pm. From there a lecturer, group and module can be added to those times.
+One night I decided to appraoch the problem in the order of the importance (in my opinion) of the variables involved in running a lecture. I felt that I the root node or one of the higher level nodes could not be satisfied, that the whole tree could not work. I decided to start with the room at the root node and work down from there. I felt at the time that the room was the most important as without it there would be no place to hold the lecture. Moving down from there I would add relationships from the room to the times that lectures run at from 9am - 6pm. From there a lecturer, group and module can be added to those times.
+
+The rooms, lecturers, moudles, times and courses would be represented by nodes with each nodes being linked to each other when appropiate using relationships such as TAUGHT_BY, AT, ATTENDING etc. Cypher queries can then be used to fing the data and relationships you need.
+
+**Implementaion**
+
+I had to get all the room numbers used as lecture rooms in GMIT. I went to the GMIT timetabling page and navigated to the rooms section where all the rooms are listed. As shown to us by our lecturer Ian McLoughlin, I opened the page source of the page and copied all the room numbers from the source code. After an hour of staring at the information wondering how to use it, I used a few tricks in visual code to cut down all the HTML code to just get the raw data I needed. I then used a combonation of Miscrosoft Word and Excel to create Cypher queries for each room to be inserted in the database as a node. The information and queries can be seen in the CSV file above called [GMITRooms.csv](https://github.com/RobbieDeegan/Graph-Theory-2017/blob/master/GMITRooms.csv)
+
+After creating my data by I then set about creating nodes by using Cypher queries.
+>CREATE (n:Person { name: 'Ian McLoughlin', title: 'Lecturer' })
+CREATE (n:Room { name: 'Andres', title: 'Developer' })
+
+
