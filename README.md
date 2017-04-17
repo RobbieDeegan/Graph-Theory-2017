@@ -32,9 +32,9 @@ Neo4j has a very well layed out interface once installed and displays graph data
 
 It took me a good while to come up with an approach to this problem. Mostly because I had to find something that was on par if not better than the current system implemented in the college. My first couple of drafts where not overly succesful as they where too complex and confusing even for myself and at the time I didn't understand 100% what was required but the these drafts eventually sent me down this path.
 
-The starting point will be the node which represents the name of the course and the year. The graph will then spread out from there like a spiderweb connecting to all the other nodes. The next layer of nodes out from the spider web will be the modules which will be connected to the course through PART_OF relationships for want of a better relationship name. From there each node will be connected to thier respected lecturer or lecturers in some cases by TAUGHT_BY relationships. The day will be the next layer and all the other information shall be connect to that included the time, room and group that is being thought. I feel this way there is less of a chance for replicating data and it seems very easy to follow in my opinion.
+The starting point will be the node which represents the name of the course and the year. The graph will then spread out from there like a spiderweb connecting to all the other nodes. The next layer of nodes out from the spider web will be the modules which will be connected to the course through PART_OF relationships for want of a better relationship name. From there each node will be connected to thier respected lecturer or lecturers in some cases by TAUGHT_BY relationships. The day will be the next layer represented by a node contain the day aswell as the time of the lecture and shall be connected room and group that is being thought after that. I feel this way there is less of a chance for replicating data and it seems very easy to follow in my opinion.
 
-Cypher queries can then be used to extract the exact data needed to be found.
+Cypher queries show below can then be used to extract the exact data needed to be found.
 
 **Implementaion**
 
