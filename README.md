@@ -48,7 +48,9 @@ I used **room1** in order to add all the rooms in one query, theres no significa
 
 I then went on to add some lecturers, modules and the course to the database.
 >CREATE (n:Person { name: 'Ian McLoughlin', title: 'Lecturer' })
+
 >CREATE (n:Module { name: 'Graph Theory'})
+
 >CREATE (n:Course { name: 'BSc in Computing in Software Development Year 3'})
 
 
