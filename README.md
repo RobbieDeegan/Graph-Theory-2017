@@ -38,10 +38,17 @@ The rooms, lecturers, moudles, times and courses would be represented by nodes w
 
 **Implementaion**
 
-I had to get all the room numbers used as lecture rooms in GMIT. I went to the GMIT timetabling page and navigated to the rooms section where all the rooms are listed. As shown to us by our lecturer Ian McLoughlin, I opened the page source of the page and copied all the room numbers from the source code. After an hour of staring at the information wondering how to use it, I used a few tricks in visual code to cut down all the HTML code to just get the raw data I needed. I then used a combonation of Miscrosoft Word and Excel to create Cypher queries for each room to be inserted in the database as a node. The information and queries can be seen in the CSV file above called [GMITRooms.csv.](https://github.com/RobbieDeegan/Graph-Theory-2017/blob/master/GMITRooms.csv) After a bit of trial and error and a lot of help from the vertical selection tool in Word, I tailored the data into the queries I needed and copied it all into Neo4j. It worked perfectly and the rooms where added. I only used the rooms on the GMIT Dublin Road campus to save some space for my prototype and as some of the room names in the Letterfrack and CCAM campuses didn't line up with the ones I've used in the databases.
+I had to get all the room numbers used as lecture rooms in GMIT. I went to the GMIT timetabling page and navigated to the rooms section where all the rooms are listed. As shown to us by our lecturer Ian McLoughlin, I opened the page source of the page and copied all the room numbers from the source code. After an hour of staring at the information wondering how to use it, I used a few tricks in visual code to cut down all the HTML code to just get the raw data I needed. I then used a combonation of Miscrosoft Word and Excel to create Cypher queries for each room to be inserted in the database as a node. The information and queries can be seen in the CSV file above called [GMITRooms.csv.](https://github.com/RobbieDeegan/Graph-Theory-2017/blob/master/GMITRooms.csv) After a bit of trail and error and a lot of help from the vertical selection tool in Word, I tailored the data into the queries I needed and copied it all into Neo4j. It worked perfectly and the rooms where added. I only used the rooms on the GMIT Dublin Road campus to save some space for my prototype and as some of the room names in the Letterfrack and CCAM campuses didn't line up with the ones I've used in the databases.
 
-After creating my data by I then set about creating nodes by using Cypher queries.
+I added each room with this query for each room.
+>CREATE	(room1:Room{ name:'PF02'})
+There was around 150 of these 
+
+I used **room1** in order to add all the rooms in one query, theres no significance to the name.
+
+I then went on to add some lecturers, modules and the course to the database.
 >CREATE (n:Person { name: 'Ian McLoughlin', title: 'Lecturer' })
-CREATE (n:Room { name: 'Andres', title: 'Developer' })
+CREATE (n:Module { name: 'Graph Theory'})
+CREATE (n:Course { name: 'BSc in Computing in Software Development Year 3'})
 
 
