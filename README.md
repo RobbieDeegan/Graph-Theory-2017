@@ -42,6 +42,7 @@ I had to get all the room numbers used as lecture rooms in GMIT. I went to the G
 
 I added each room with this query for each room.
 >CREATE	(room1:Room{ name:'PF02'})
+
 There was around 150 of these 
 
 I used **room1** in order to add all the rooms in one query, theres no significance to the name.
