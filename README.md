@@ -34,7 +34,7 @@ It took me a good while to come up with an approach to this problem. Mostly beca
 
 The starting point will be the node which represents the name of the course and the year. The graph will then spread out from there like a spiderweb connecting to all the other nodes. The next layer of nodes out from the spider web will be the modules which will be connected to the course through PART_OF relationships for want of a better relationship name. From there each node will be connected to thier respected lecturer or lecturers in some cases by TAUGHT_BY relationships. The day will be the next layer and all the other information shall be connect to that included the time, room and group that is being thought. I feel this way there is less of a chance for replicating data and it seems very easy to follow in my opinion.
 
-The rooms, lecturers, moudles, times and courses would be represented by nodes with each nodes being linked to each other when appropiate using relationships such as TAUGHT_BY, AT, ATTENDING etc. Cypher queries can then be used to find the data and relationships you need.
+Cypher queries can then be used to extract the exact data needed to be found.
 
 **Implementaion**
 
