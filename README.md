@@ -42,7 +42,7 @@ Cypher queries show below can then be used to extract the exact data needed to b
 
 **Extracting The Data from the GMIT Timetable site**
 
-I had to get all the room numbers used as lecture rooms in GMIT. I went to the GMIT timetabling page and navigated to the rooms section where all the rooms are listed. As shown to us by our lecturer Ian McLoughlin, I opened the page source of the page and copied all the room numbers from the source code. After an hour of staring at the information wondering how to use it, I used a few tricks in visual code like the use of regular expressions to cut down all the HTML code to just get the raw data I needed. I then used a combonation of Miscrosoft Word and Excel to organise the data create Cypher queries for each room to be inserted in the database as a node.  The information and queries can be seen in the CSV file above called [GMITRooms.csv.](https://github.com/RobbieDeegan/Graph-Theory-2017/blob/master/GMITRooms.csv) After a bit of trail and error and a lot of help from the vertical selection tool in Word, I tailored the data into the queries I needed and copied it all into Neo4j. It turned out to be very efficient and worked perfectly. I only used the rooms on the GMIT Dublin Road campus to save some space for my prototype and as some of the room names in the Letterfrack and CCAM campuses didn't line up with the ones I've used in the databases.
+I had to get all the room numbers used as lecture rooms in GMIT. I went to the GMIT timetabling page and navigated to the rooms section where all the rooms are listed. As shown to us by our lecturer Ian McLoughlin, I opened the page source of the page and copied all the room numbers from the source code. After an hour of staring at the information wondering how to use it, I used a few tricks in visual code like the use of regular expressions to cut down all the HTML code to just get the raw data I needed. I then used a combonation of Miscrosoft Word and Excel to organise the data create Cypher queries for each room to be inserted in the database as a node.  The information and queries can be seen in the CSV file above called [GMITRooms.csv.](https://github.com/RobbieDeegan/Graph-Theory-2017/blob/master/GMITRooms.csv) After a bit of trial and error and a lot of help from the vertical selection tool in Word, I tailored the data into the queries I needed and copied it all into Neo4j. It turned out to be very efficient and worked perfectly. I only used the rooms on the GMIT Dublin Road campus to save some space for my prototype and as some of the room names in the Letterfrack and CCAM campuses didn't line up with the ones I've used in the databases.
 
 I added each room with this query for each room.
 >CREATE	(room1:Room{ name:'PF02'})
@@ -82,3 +82,8 @@ DELETE n
 WHERE n.name='Graph Theory' AND r.name='Ian McLoughlin' 
 DELETE rel
 
+### References
+
+1. Dillinger.io for the markdown editting
+2. [https://neo4j.com](https://neo4j.com)
+3. [https://neo4j.com/developer/cypher/](https://neo4j.com/developer/cypher/)
