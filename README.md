@@ -27,12 +27,14 @@ Each node and edge can hold multiple attributes and can be labled to narrow down
 
 Neo4j has a very well layed out interface once installed and displays graph databases with the nodes represented by coloured cirlces and the relationships or edges can be labled for easy an easy to follow connection between the nodes. The database can be very well layed out if designed properly and the built it command line for cypher querys works very well. When the right querys are used, only the relevent information is displayed very quickly. The nodes can also be dragged around to suit your preference. 
 
+To install Neo4j go their website at [https://neo4j.com](https://neo4j.com), go to downloads and get the Community Edition for Individuals. From there follow the installation instructions, start your database and it will be open on [http://localhost:7474/browser/](http://localhost:7474/browser/) on your browser.
+
 
 ### My Approach to the problem
 
 It took me a good while to come up with an approach to this problem. Mostly because I had to find something that was on par if not better than the current system implemented in the college. My first couple of drafts where not overly succesful as they where too complex and confusing even for myself and at the time I didn't understand 100% what was required but the these drafts eventually sent me down this path.
 
-The starting point will be the node which represents the name of the course and the year. The graph will then spread out from there like a spiderweb connecting to all the other nodes. The next layer of nodes out from the spider web will be the modules which will be connected to the course through PART_OF relationships for want of a better relationship name. From there each node will be connected to thier respected lecturer or lecturers in some cases by TAUGHT_BY relationships. The day will be the next layer represented by a node contain the day aswell as the time of the lecture and shall be connected room and group that is being thought after that. I feel this way there is less of a chance for replicating data and it seems very easy to follow in my opinion.
+The starting point will be the node which represents the name of the course and the year. The graph will then spread out from there like a spiderweb connecting to all the other nodes. The next layer of nodes out from the spider web will be the modules which will be connected to the course through PART_OF relationships for want of a better relationship name. From there each node will be connected to thier respected lecturer or lecturers in some cases by TAUGHT_BY relationships. From there the days of the week will be reprsented by 5 nodes with the times of lectures  and labs coming off of that. The groups invloved in the connected also.
 
 Cypher queries show below can then be used to extract the exact data needed to be found.
 
@@ -52,13 +54,20 @@ I used **room1** in order to add all the rooms in one query, theres no significa
 For the propuses of this prototype database I'm onlt going to use the Third Year Software Development Course timetable just to show the functionability.
 
 I then went on to add some lecturers, modules and the course to the database.
->CREATE (n:Person { name: 'Ian McLoughlin', title: 'Lecturer' })
+>CREATE (n1:Person {name: 'Ian McLoughlin'}), (n2:Person {name: 'Deirdre O Donovan'}), (n3:Person {name: 'Damien Costello'}),
+(n4:Person {name: 'Patrick Mannion'}), (n5:Person {name: 'Martin Hynes'}), (n6:Person {name: 'Gerard Harrison'})
 
->CREATE (n:Module { name: 'Graph Theory'})
+>CREATE (module1:Module{name:'Graph Theory'}), (module2:Module{name:'Mobile Application Dev'}), (module3:Module{name:'Software Testing'}), (module4:Module{name:'Database Management'}), (module5:Module{name:'Server Side RAD'})
 
->CREATE (n:Course { name: 'BSc in Computing in Software Development Year 3'})
+>CREATE (y:Year {name:'Software Dev Year 3'}),(A:Group {name:'Group A'}),(B:Group {name:'Group B'}), (C:Group {name:'Group C'})
 
-I then started to link up as many nodes as I could to start to build the timetabling system. I started with the lecturers and what they tought to get started.
+Creating the times(queries repeated for each day) and days
+
+>CREATE (m1:Mon{name:'10am'}), (m2:Mon{name:'12pm'}), (m3:Mon{name:'2pm'}), (m4:Mon{name:'4pm'})
+
+>CREATE(Monday:Day {name:'Monday'}), (Tuesday:Day {name:'Tuesday'}), (Wednsday:Day {name:'Wednsday'}), (Thursday:Day {name:'Thursday'}),(Friday:Day {name:'Friday'})
+
+I then started to link up as many nodes as I could to start to build the timetabling system. I started with the lecturers and what they tought to get started. Then I connected the days the times, groups to the year and so on.
 
 >MATCH (a:Module),(b:Person)
 WHERE a.name = 'Graph Theory' AND b.name = 'Ian McLoughlin'
