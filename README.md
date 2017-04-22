@@ -67,11 +67,17 @@ Creating the times(queries repeated for each day) and days
 
 >CREATE(Monday:Day {name:'Monday'}), (Tuesday:Day {name:'Tuesday'}), (Wednsday:Day {name:'Wednsday'}), (Thursday:Day {name:'Thursday'}),(Friday:Day {name:'Friday'})
 
+Creating labs and lectures
+
+>CREATE (GraphTheoryLab: Class {name:'Graph Theory Lab'}), (GraphTheoryLec: Class {name:'Graph Theory Lecture'}), (ServerSideLec: Class {name:'Server Side RAD Lecture'}), (SoftTestLec: Class {name:'Software Testing Lecture'}), (DataBaseLec: Class {name:'Database Management Lecture'})
+
 I then started to link up as many nodes as I could to start to build the timetabling system. I started with the lecturers and what they tought to get started. Then I connected the days the times, groups to the year and so on.
 
 >MATCH (a:Module),(b:Person)
 WHERE a.name = 'Graph Theory' AND b.name = 'Ian McLoughlin'
 CREATE (a)-[r:TAUGHT_BY]->(b)
+
+>MATCH (a:Class),(b:Wedn) WHERE a.name = 'Graph Theory Lab' AND b.name = '9am' CREATE (a)-[r:ON_AT]->(b)
 
 When creating all these nodes and relationships I made few errors along the way. I had to delete some nodes or relationships when I set them up incorrectly using these queries.
 
@@ -82,8 +88,12 @@ DELETE n
 WHERE n.name='Graph Theory' AND r.name='Ian McLoughlin' 
 DELETE rel
 
+Searching for a class
+
+>Match(Day {name:'Friday'}),(f1:Friday {name:'11am'}),(GraphTheoryLec:Class{name:'Graph Theory Lecture'}),(y:Year {name:'Software Dev Year 3'}),(module1:Module {name:'Graph Theory'}) return *
+
 ### References
 
-1. Dillinger.io for the markdown editting
+1. [Dillinger.io](http://dillinger.io) for the markdown editting
 2. [https://neo4j.com](https://neo4j.com)
 3. [https://neo4j.com/developer/cypher/](https://neo4j.com/developer/cypher/)
