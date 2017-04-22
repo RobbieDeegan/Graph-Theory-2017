@@ -96,6 +96,13 @@ Searching for a class
 
 ![alt text](https://github.com/RobbieDeegan/Graph-Theory-2017/blob/master/Assets/graphtheoryfri9am.png "Exapmle of Graph Theory @ 11am on Friday")
 
+### My problems with the rooms
+
+As I was working through making the graph database, I was constantly getting errors relating to the rooms when trying to add relationships. It may be something to do with the way I formatted the data in the CSV that could of led to errors with tabbing and spaces while trying to search for them leading to not being able to find them.
+
+### Conclusion
+
+
 ### References
 
 1. [Dillinger.io](http://dillinger.io) for the markdown editting
