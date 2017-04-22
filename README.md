@@ -79,6 +79,8 @@ CREATE (a)-[r:TAUGHT_BY]->(b)
 
 >MATCH (a:Class),(b:Wedn) WHERE a.name = 'Graph Theory Lab' AND b.name = '9am' CREATE (a)-[r:ON_AT]->(b)
 
+![alt text](https://github.com/RobbieDeegan/Graph-Theory-2017/blob/master/Assets/example.png "The graph coming together")
+
 When creating all these nodes and relationships I made few errors along the way. I had to delete some nodes or relationships when I set them up incorrectly using these queries.
 
 >MATCH (n:Graphy Theory)
