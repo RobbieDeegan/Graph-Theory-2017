@@ -94,6 +94,8 @@ Searching for a class
 
 >Match(Day {name:'Friday'}),(f1:Friday {name:'11am'}),(GraphTheoryLec:Class{name:'Graph Theory Lecture'}),(y:Year {name:'Software Dev Year 3'}),(module1:Module {name:'Graph Theory'}) return *
 
+![alt text](https://github.com/RobbieDeegan/Graph-Theory-2017/blob/master/Assets/graphtheoryfri9am.png "Exapmle of Graph Theory @ 11am on Friday")
+
 ### References
 
 1. [Dillinger.io](http://dillinger.io) for the markdown editting
