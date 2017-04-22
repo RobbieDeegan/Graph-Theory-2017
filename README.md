@@ -102,9 +102,11 @@ As I was working through making the graph database, I was constantly getting err
 
 ### Conclusion
 
+I found this assignment tricky enough at the start. I struggled to design a decent layout for the graph. I was working on one design and then realised half way through that it wasn't going to work out so it was back to the drawing board. I need to focus more on the design and research of the project before I start trying to implement it in future to reduce the errors and time wasting to result in an overall better and cleaner project. I enjoyed using Cypher once I got into the swing of it and found it came to me very well as I followed tutorials and started to see everything come together. I would of like to sort out that issue with the rooms if I was to do it again and possibly use a better design for the timetable as I think theres a lot of room for improvement. Overall I think the project went well considering the slow start I had.
 
 ### References
 
 1. [Dillinger.io](http://dillinger.io) for the markdown editting
 2. [https://neo4j.com](https://neo4j.com)
 3. [https://neo4j.com/developer/cypher/](https://neo4j.com/developer/cypher/)
+4. Lecturer notes by Ian McLoughlin [https://github.com/graph-theory](https://github.com/graph-theory)
